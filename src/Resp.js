@@ -18,6 +18,7 @@ import About from './component/About';
 import Contact from './component/Contact';
 import { createTheme } from '@mui/material/styles';
 import img1 from './component/Crmlogo.png';
+import LoginIcon from '@mui/icons-material/AccountCircle';
 
 // const pages = ['Home', 'About', 'Contact'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -56,9 +57,9 @@ function ResponsiveAppBar() {
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
                 onClick={handleOpenNavMenu}
-                color="inherit"
+                color="green"
               >
-                <MenuIcon />
+                <MenuIcon  />
               </IconButton>
               <Menu
                 id="menu-appbar"
@@ -80,7 +81,7 @@ function ResponsiveAppBar() {
               >
 
                 <MenuItem  component={Link} to='/' onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">Home</Typography>
+                  <Typography textAlign="center" >Home</Typography>
                 </MenuItem>
                 <MenuItem  component={Link} to='/About' onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">About</Typography>
@@ -94,21 +95,22 @@ function ResponsiveAppBar() {
             
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
 
-              <Button component={Link} to='/' sx={{ my: 2, color: 'white', display: 'block', '&:hover': {
+              <Button component={Link} to='/' sx={{fontSize:18, marginLeft: 5, my: 2, color: 'white', display: 'block', '&:hover': {
                   backgroundColor: 'rgba(255, 255, 255, 0.15)', color:'yellow'
                 }}}>Home</Button>
-              <Button component={Link} to='/About' sx={{ my: 2, color: 'white', display: 'block', '&:hover': {
+              <Button component={Link} to='/About' sx={{fontSize:18, marginLeft: 5, my: 2, color: 'white', display: 'block', '&:hover': {
                   backgroundColor: 'rgba(255, 255, 255, 0.15)', color:'yellow'
                 }}}>About</Button>
-              <Button component={Link} to='/Contact' sx={{ my: 2, color: 'white', display: 'block', '&:hover': {
+              <Button component={Link} to='/Contact' sx={{fontSize:18, marginLeft: 5, my: 2, color: 'white', display: 'block', '&:hover': {
                   backgroundColor: 'rgba(255, 255, 255, 0.15)', color:'yellow'
                 }}}>Contact</Button>
             </Box>
 
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 ,  '&:hover': {
+                  border:'2px dashed white'}}}>
+                  <LoginIcon style={{fontSize:45,color:'grey'}} />
                 </IconButton>
               </Tooltip>
               <Menu
